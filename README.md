@@ -6,7 +6,7 @@
 
 - `src/`: 存放LaTeX源文件的目录
 
-## Setup
+## Setup(optinal)
 1. **环境配置**
   安装 Git：确保本地已安装 Git。如果未安装，可以从 Git 官网 下载并安装。
   配置用户名和邮箱（如果尚未设置）：
@@ -15,6 +15,9 @@
   git config --global user.email "your.email@example.com"
   ```
 2. **克隆仓库** `$ git clone https://github.com/OpenSubmarine-X/UDL-Solution-Manual.git`
+> 也可以选择直接在GitHub上进行在线编辑，然后按照[[协作流程]]的逻辑创建pull request
+![image](https://github.com/user-attachments/assets/7a081b0e-4790-462b-853b-0834d8b05803)
+
    
 ## 协作流程
 1. **创建分支**: 从 `main` 分支创建一个新的分支, 将你的分支推送到远程仓库`git push origin <branch-name>`。
