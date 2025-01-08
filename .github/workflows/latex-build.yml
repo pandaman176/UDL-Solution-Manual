@@ -1,0 +1,52 @@
+name: Build LaTeX Documents
+
+on:
+  pull_request:
+    paths:
+      - '**.tex'  # 只在 .tex 文件变更时触发
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup TeX Live
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "**/*.tex"  # 编译所有 .tex 文件
+          latexmk_use_xelatex: true  
+          work_in_root_file_dir: true
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: "**/*.pdf"
+
+      - name: Comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo, number } = context.issue;
+            
+            // 获取所有已编译的 PDF 文件路径
+            const pdfs = fs.readdirSync('.').filter(file => file.endsWith('.pdf'));
+            
+            let comment = '### LaTeX 编译结果\n\n';
+            if (pdfs.length > 0) {
+              comment += '✅ PDF 文件已成功生成。\n';
+              comment += '你可以在 Actions 标签页下载编译后的 PDF 文件。\n';
+            } else {
+              comment += '❌ 编译过程中出现错误。\n';
+              comment += '请检查编译日志获取详细信息。\n';
+            }
+            
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body: comment
+            }); 
