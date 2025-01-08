@@ -5,6 +5,11 @@ on:
     paths:
       - '**.tex'  # 只在 .tex 文件变更时触发
 
+permissions:
+  contents: read
+  pull-requests: write  # 允许在 PR 中写入评论
+  issues: write        # 允许在 issues 中写入评论
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
