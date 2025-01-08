@@ -37,6 +37,10 @@ jobs:
             const fs = require('fs');
             const path = require('path');
             
+            // 从 github.context 获取必要的上下文信息
+            const { owner, repo } = context.repo;
+            const { number } = context.issue;
+            
             // 递归查找所有 PDF 文件
             function findPDFs(dir) {
               let results = [];
