@@ -35,17 +35,43 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const { owner, repo, number } = context.issue;
+            const path = require('path');
+            
+            // 递归查找所有 PDF 文件
+            function findPDFs(dir) {
+              let results = [];
+              const files = fs.readdirSync(dir);
+              
+              for (const file of files) {
+                const filePath = path.join(dir, file);
+                const stat = fs.statSync(filePath);
+                
+                if (stat.isDirectory()) {
+                  results = results.concat(findPDFs(filePath));
+                } else if (file.endsWith('.pdf')) {
+                  results.push(filePath);
+                }
+              }
+              
+              return results;
+            }
             
             // 获取所有已编译的 PDF 文件路径
-            const pdfs = fs.readdirSync('.').filter(file => file.endsWith('.pdf'));
+            const pdfs = findPDFs('.');
             
             let comment = '### LaTeX 编译结果\n\n';
             if (pdfs.length > 0) {
               comment += '✅ PDF 文件已成功生成。\n';
-              comment += '你可以在 Actions 标签页下载编译后的 PDF 文件。\n';
+              comment += '找到的 PDF 文件：\n';
+              pdfs.forEach(pdf => {
+                comment += `- ${pdf}\n`;
+              });
+              comment += '\n你可以在 Actions 标签页下载编译后的 PDF 文件。\n';
             } else {
-              comment += '❌ 编译过程中出现错误。\n';
+              comment += '❌ 未找到生成的 PDF 文件。\n';
+              comment += '可能的原因：\n';
+              comment += '1. LaTeX 编译失败\n';
+              comment += '2. PDF 文件未在预期位置生成\n';
               comment += '请检查编译日志获取详细信息。\n';
             }
             
@@ -54,4 +80,11 @@ jobs:
               repo,
               issue_number: number,
               body: comment
-            }); 
+            });
+
+      - name: List directory contents
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -R 
