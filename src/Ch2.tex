@@ -13,7 +13,9 @@
         \vspace{1cm}
         \textbf{Solution:}
         \begin{align*}
-            % Add solution here
+            L[\phi] &= \sum_{i=1}^I (\phi_0 + \phi_1x_i - y_i)^2 \tag{2.5} \\
+            \frac{\partial L}{\partial \phi_0} &= \sum_{i=1}^I 2(\phi_0 + \phi_1x_i - y_i) \\
+            \frac{\partial L}{\partial \phi_1} &= \sum_{i=1}^I 2(\phi_0 + \phi_1x_i - y_i)x_i \\
         \end{align*}
 
     \subsection*{Problem 2.2}
@@ -23,6 +25,15 @@
         \textbf{Solution:}
         \begin{align*}
             % Add solution here
+            & \frac{\partial L}{\partial \phi_0} = 0, \frac{\partial L}{\partial \phi_0} = 0 \Rightarrow \left\{
+            \begin{array}{l}
+            I\phi_0 + \phi_1\sum_{i=1}^I x_i - \sum_{i=1}^I y_i = 0 \\
+            \phi_0\sum_{i=1}^I x_i + \phi_1\sum_{i=1}^I x_i^2 - \sum_{i=1}^I y_ix_i = 0
+            \end{array}
+            \right. \\
+            & \phi_1 = \frac{\sum_{i=1}^I y_ix_i - I\bar{x}\bar{y}}{\sum_{i=1}^I x_i^2 - I\bar{x}^2} \\
+            & \phi_0 = \bar{y} - \phi_1\bar{x} \\
+            & (\bar{x} = \frac{1}{I}\sum_{i=1}^I x_i, \bar{y} = \frac{1}{I}\sum_{i=1}^I y_i)
         \end{align*}
 
     \subsection*{Problem 2.3*}
@@ -31,7 +42,7 @@
         \vspace{1cm}
         \textbf{Solution:}
         \begin{align*}
-            % Add solution here
+            \text{See official solution for answer}
         \end{align*}
 
 
