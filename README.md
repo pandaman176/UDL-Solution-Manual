@@ -2,6 +2,10 @@
 
 本仓库用于维护《Understanding Deep Learning》(UDL)一书的习题解答。
 
+## Update List
+- [x] Ch1
+- [x] Ch2
+
 ## 仓库结构
 
 - `src/`: 存放LaTeX源文件的目录
@@ -27,4 +31,4 @@
    2. create `new pull request`
    3. base: main <- compare `<your branch>`
    4. get feedback (complied pdf file about your change)
-4. **开会交流题解**: 通过每周会议大家一起交流题解 
+4. **开会交流题解**: 通过每周会议大家一起交流题解
