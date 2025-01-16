@@ -16,6 +16,7 @@
             Both are linear mappings, since linear combinations of linear functions are still linear.
         \end{quote}
 
+
     \subsection*{Problem 3.2}
     For each of the four linear regions in figure 3.3j, indicate which hidden units are inactive and which are active (i.e., which do and do not clip their inputs).
 
@@ -84,7 +85,7 @@
             if $\alpha$ is positive, then we can pick $\alpha$ out of the ReLU function, so the output of the network is $\alpha \cdot \frac{1}{\alpha} \text{ReLU}[z] = \text{ReLU}[z]$.
             if $\alpha$ is negative, then the ReLU function will clip the original positive part of the input, thus influencing the output of the network.
         \end{quote}
-
+        
     \subsection*{Problem 3.7}
     Consider fitting the model in equation 3.1 using a least squares loss function. Does this loss function have a unique minimum? i.e., is there a single ``best'' set of parameters?
 
