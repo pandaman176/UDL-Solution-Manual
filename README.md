@@ -1,5 +1,5 @@
 # UDL-Solution-Manual
-This repo is a personal solution manual for (Understanding Deep Learning)(UDL)
+This repo is a personal solution manual for *Understanding Deep Learning*(UDL)
 I will keep update the solutions as my learning process goes on.
 
 ## Update List
