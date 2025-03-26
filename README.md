@@ -1,34 +1,20 @@
 # UDL-Solution-Manual
-
-本仓库用于维护《Understanding Deep Learning》(UDL)一书的习题解答。
+This repo is a personal solution manual for (Understanding Deep Learning)(UDL)
+I will keep update the solutions as my learning process goes on.
 
 ## Update List
 - [x] Ch1
 - [x] Ch2
+- [x] Ch7
+- [x] Ch9
 
-## 仓库结构
+## Structure
 
-- `src/`: 存放LaTeX源文件的目录
+- `src/`: Latex source file
 
-## Setup(optinal)
-1. **环境配置**
-  安装 Git：确保本地已安装 Git。如果未安装，可以从 Git 官网 下载并安装。
-  配置用户名和邮箱（如果尚未设置）：
-  ```bash
-  git config --global user.name "Your Name"
-  git config --global user.email "your.email@example.com"
-  ```
-2. **克隆仓库** `$ git clone https://github.com/OpenSubmarine-X/UDL-Solution-Manual.git`
-> 也可以选择直接在GitHub上进行在线编辑，然后按照[[协作流程]]的逻辑创建pull request
-![image](https://github.com/user-attachments/assets/7a081b0e-4790-462b-853b-0834d8b05803)
-
-   
-## 协作流程
-1. **创建分支**: 从 `main` 分支创建一个新的分支, 将你的分支推送到远程仓库`git push origin <branch-name>`。
-2. **提交题解**: 在新分支上进行你的更改`./src/Chx.tex`，并提交题解。`git add -> commit -> push`
-3. **提交 Pull Request**:
-   1. Navigate to `Pull request`
-   2. create `new pull request`
-   3. base: main <- compare `<your branch>`
-   4. get feedback (complied pdf file about your change)
-4. **开会交流题解**: 通过每周会议大家一起交流题解
+**Several things need to be emphasized:**
+(1) I wrote this solution purely out of admiration of UDL, and I have no will to publish this solutiona manual, 
+(2) It is only meant to be used as personal study reference, please donnot take it for other purposes, e.g., upload to other websites or publication. 
+(3) If it is illegal (infringing the copyright), please contact me and I will withdraw this solution maunal immediately. 
+(4) There is an official solution manual published at official website.
+https://github.com/udlbook/udlbook/blob/main/UDL_Answer_Booklet_Students.pdf
