@@ -7,6 +7,7 @@ I will keep update the solutions as my learning process goes on.
 - [x] Ch2
 - [x] Ch7
 - [x] Ch9
+- [x] Ch11
 
 ## Structure
 
